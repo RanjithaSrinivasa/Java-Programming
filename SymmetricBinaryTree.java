@@ -15,30 +15,18 @@
   }
  
 class Solution {
-    public boolean compare(TreeNode lsubtree, TreeNode rsubtree) {
-        if((lsubtree == null) || (rsubtree == null)) {
-            return true;
-        } else {
-           if  (lsubtree.left.val == rsubtree.right.val) {
-                if (lsubtree.right.val == rsubtree.left.val){
-                    compare (lsubtree.left, rsubtree.right);
-                    compare(lsubtree.right, rsubtree.left);
-                }
-           }
-           else {
-              return false;
-           }
+    
+    public boolean compare(TreeNode t1, TreeNode t2) {
+        if ((t1 == null) && (t2==null)) return true;
+        else if((t1 == null) || (t2 == null)) return false;
+        else {
+           return (t1.val == t2.val) 
+                   && compare(t1.right, t2.left) 
+                   && compare(t1.left, t2.right);
         }
-        return true;
     }
+    
     public boolean isSymmetric(TreeNode root) {
-     boolean flag = true;
-     if(root != null) {
-         //System.out.println("left val is" + root.left.val);
-         TreeNode lt = root.left;
-         TreeNode rt = root.right;
-         flag = compare(lt,rt);         
-     } 
-    return flag;
+         return compare(root,root);         
     }
 }
