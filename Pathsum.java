@@ -1,34 +1,37 @@
 /**
- * Definition for a binary tree node. */
-  public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-  }
-
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
+    int total = 0;
     public boolean hasPathSum(TreeNode root, int sum) {
-        int total = 0;
-        if(root == null) {
+        if(root == null){
             return false;
         }
-        else {
-            total = root.val;
-            if(total == sum) {
+        sum = sum - root.val;
+        if(isLeaf(root) == true && (sum == 0) ) {
                 return true;
-            }
-            else {
-                hasPathSum(root.left, sum - root.val);
-                hasPathSum(root.right, sum - root.val);
-            }
         }
-        return true;
+                
+        boolean left = hasPathSum(root.left, sum);
+        boolean right = hasPathSum(root.right, sum);
+        
+        return left || right;
+    }     
+    public boolean isLeaf(TreeNode root) {
+        if(root.left == null && root.right == null) return true;
+        else return false;
     }
+
 }
