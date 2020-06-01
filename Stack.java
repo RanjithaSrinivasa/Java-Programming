@@ -22,17 +22,18 @@ public class Stack {
 		}
 	}
 
-	public int pop(){
+	public void pop(){
 		if(isEmpty()) {
-			System.out.println("stack is empty");
+			System.out.println("Stack is empty");
 			System.exit(1);
-		} 
-		return arr[top--];
+		} else {
+			System.out.println("Deleted element is " + arr[top--]);
+		}
 	}
 
 	public Boolean isFull(){
 		if(top+1 == capacity) {
-			System.out.println("Full Stack");
+			System.out.println("Stack is full");
 			return true;
 		} else return false;
 	}
@@ -43,16 +44,16 @@ public class Stack {
 		} else return false;
 	}
 
-    public int size() {
-    	return top + 1;
+    public void size() {
+    	System.out.println("Size is " + (top + 1));;
     }
-	public int peek(){
+
+	public void peek(){
 		if(isEmpty()) {
 			System.out.println("Stack is empty");
 			System.exit(1);
-		} 
-		return arr[top];
-
+		} else
+		 	System.out.println("Top most element is " + arr[top]);
 	}
 
 
@@ -65,13 +66,11 @@ public class Stack {
 		s.push(3);
 		s.push(4);
 
-		int w = s.size();
-		System.out.println("size is " + w);
+	    s.size();
 
 		s.isFull();
 
-	    int e = s.peek();
-	    System.out.println("top element is " + e);
+	    s.peek();
 
 	    s.pop();
 	    s.pop();
