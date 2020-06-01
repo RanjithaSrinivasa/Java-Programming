@@ -56,6 +56,10 @@ public class Stack {
 		 	System.out.println("Top most element is " + arr[top]);
 	}
 
+	public void clear() {
+		top = 0;
+	}
+
 
 
 	public static void main(String [] args) {
@@ -72,11 +76,15 @@ public class Stack {
 
 	    s.peek();
 
+	    s.clear();
+
+	    s.peek();
+/*
 	    s.pop();
 	    s.pop();
 	    s.pop();
 	    s.pop();
 
-	    s.isEmpty();
+	    s.isEmpty(); */
 	}
 }
