@@ -39,9 +39,9 @@ class TestTreeMap{
 		people.put(Dilip, 5);
 		people.put(Shruthi, 3);
 
-
-
-/*		System.out.println("size is " + people.size());
+		//below commented code works when key is integer and value is object
+		/*
+		System.out.println("size is " + people.size());
 
 		System.out.println(people);
 
@@ -51,9 +51,10 @@ class TestTreeMap{
 
 		System.out.println(people);
 
+		System.out.println(people.containsKey(2));  */
 
-		System.out.println(people.containsKey(2)); */
-
+		/* Since treemap sorts it's keys, here key type is object which treemap is umaware of
+		   Hence, you have to override compareTo method to specify to treemap how to sort the keys */
 		people.forEach((key, value) -> System.out.println(key + ":" + value));
 
 
