@@ -1,5 +1,10 @@
 import java.util.*;
 
+//NOTE: TreeSet is a class, Set is an Interface, you can implement set interface
+//TreeSet is class, use parent as reference and it's child for instantiation
+
+//if you try to add a duplicate element, set allows it but it might result in loss of data
+
 
 //treeset is used when you need to maintain a data structure with unique elements in sorted order
 
