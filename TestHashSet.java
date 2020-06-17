@@ -40,7 +40,7 @@ class TestHashSet{
 
 		System.out.println(hashset.isEmpty());
 
-		//works only for Treeset
+		//BMETHODS FOR TREESET ONLY AND NOT HASHSET
 
 		//first() gives first element in set
 		//System.out.println("first object is " + hashset.first());
